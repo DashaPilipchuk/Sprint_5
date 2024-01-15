@@ -1,1 +1,5 @@
 tests/.DS_Store
+conftest .py
+const .py
+locators .py
+requirements .txt

@@ -1,23 +1,24 @@
 from locators import Locators
+from const import Constants
 
 
 class TestSectionConstructor:
 
     def test_go_to_section_sauces(self, driver):
         sauces = driver.find_element(*Locators.SAUCES)
-        driver.execute_script("arguments[0].scrollIntoView();", sauces)
-        assert "Соусы" in sauces.text
+        sauces.click()
+        assert Constants.NEW_CLASS in sauces.get_attribute("class")
 
     def test_go_to_section_fillings(self, driver):
         fillings = driver.find_element(*Locators.FILLINGS)
-        driver.execute_script("arguments[0].scrollIntoView();", fillings)
-        assert "Начинки" in fillings.text
+        fillings.click()
+        assert Constants.NEW_CLASS in fillings.get_attribute("class")
 
     def test_go_to_section_rolls(self, driver):
         fillings = driver.find_element(*Locators.FILLINGS)
-        driver.execute_script("arguments[0].scrollIntoView();", fillings)
+        fillings.click()
         rolls = driver.find_element(*Locators.ROLLS)
-        driver.execute_script("arguments[0].scrollIntoView();", rolls)
-        assert "Булки" in rolls.text
+        rolls.click()
+        assert Constants.NEW_CLASS in rolls.get_attribute("class")
 
 

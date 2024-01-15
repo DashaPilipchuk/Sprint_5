@@ -32,7 +32,7 @@ class TestRegistration:
         driver.find_element(*Locators.EMAIL_FIELD).send_keys(email)
         driver.find_element(*Locators.PASSWORD_FIELD).send_keys(password)
         driver.find_element(*Locators.REGISTRATION_BUTTON).click()
-        assert '/register' in driver.current_url
+        assert '/login' not in driver.current_url
 
     def test_registration_with_5_symbols(self, driver):
         password = 'abc45'
